@@ -167,11 +167,11 @@ define QT5BASE_CONFIGURE_CMDS
 		-examplesdir /usr/lib/qt/examples \
 		-no-rpath \
 		-nomake tests \
-		-device buildroot \
+		-device rasp-pi \
 		-device-option CROSS_COMPILE="$(CCACHE) $(TARGET_CROSS)" \
-		-device-option BR_COMPILER_CFLAGS="$(TARGET_CFLAGS)" \
-		-device-option BR_COMPILER_CXXFLAGS="$(TARGET_CXXFLAGS)" \
-		-device-option EGLFS_PLATFORM_HOOKS_SOURCES="$(QT5BASE_EGLFS_PLATFORM_HOOKS_SOURCES)" \
+		-device-option QMAKE_CFLAGS="$(TARGET_CFLAGS)" \
+		-device-option QMAKE_CXXFLAGS="$(TARGET_CXXFLAGS)" \
+		-device-option QMAKE_LIBS_OPENGL_ES2="-lGLESv2 -lEGL -lvchostif" \
 		-no-c++11 \
 		$(QT5BASE_CONFIGURE_OPTS) \
 	)

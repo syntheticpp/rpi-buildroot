@@ -120,7 +120,11 @@ if BR2_PACKAGE_BUSYBOX_SHOW_OTHERS
 source "package/sed/Config.in"
 endif
 source "package/sstrip/Config.in"
+
+source "package/swig/Config.in"
+=======
 source "package/subversion/Config.in"
+
 if BR2_PACKAGE_BUSYBOX_SHOW_OTHERS
 source "package/tar/Config.in"
 endif
@@ -261,7 +265,6 @@ menu "Firmware"
 source "package/am33x-cm3/Config.in"
 source "package/b43-firmware/Config.in"
 source "package/linux-firmware/Config.in"
-source "package/rpi-firmware/Config.in"
 source "package/sunxi-boards/Config.in"
 source "package/ux500-firmware/Config.in"
 source "package/zd1211-firmware/Config.in"
@@ -336,7 +339,6 @@ source "package/pciutils/Config.in"
 source "package/picocom/Config.in"
 source "package/read-edid/Config.in"
 source "package/rng-tools/Config.in"
-source "package/rpi-userland/Config.in"
 source "package/sane-backends/Config.in"
 source "package/sdparm/Config.in"
 source "package/setserial/Config.in"
@@ -470,10 +472,13 @@ source "package/python-pyusb/Config.in"
 source "package/python-pyzmq/Config.in"
 source "package/python-serial/Config.in"
 source "package/python-setuptools/Config.in"
+source "package/python-wiringpi2/Config.in"
 source "package/python-simplejson/Config.in"
 source "package/python-thrift/Config.in"
 source "package/python-tornado/Config.in"
 source "package/python-versiontools/Config.in"
+source "package/greenlet/Config.in"
+source "package/gevent/Config.in"
 endmenu
 endif
 source "package/ruby/Config.in"
@@ -1135,5 +1140,8 @@ if BR2_PACKAGE_BUSYBOX_SHOW_OTHERS
 source "package/vim/Config.in"
 endif
 endmenu
+
+# Raspberry Pi specific
+source "package/raspberrypi/Config.in"
 
 endmenu
